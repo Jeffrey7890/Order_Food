@@ -7,10 +7,17 @@ from flask import redirect, url_for, request
 app = Flask(__name__)
 
 @app.route('/')
+def index():
+	return render_template('button.html')
+
+
 @app.route('/index')
 def hello_world():
 	users = ['Joy Keke', 'Adrianna', 'Victoria']
 	return render_template('index.html', title = 'Welcome',members = users)
+
+
+
 
 @app.route('/dashboard/<name>')
 def dashboard(name):
